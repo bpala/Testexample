@@ -155,6 +155,9 @@ u = u0
 # solver.solve(u.vector(), b)
 
 # plot(u0, mode='color')
+plotter = VTKPlotter(u)
+plotter.set_min_max(0.0, 2100.0)
+
 # Time-stepping
 while t < T:
 
@@ -173,7 +176,8 @@ while t < T:
 
     # Plot solution
     # u0.assign(u)
-    plot(u)
+    #plotter.plot() plot(u)
+    plotter.plot()
 
     # Save the solution to file
     # out_file << (u, t)
